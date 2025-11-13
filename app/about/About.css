@@ -1,0 +1,58 @@
+.about-page {
+  padding: 6rem 0;
+  background: white;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 3rem auto 0;
+  line-height: 1.8;
+}
+
+.lead {
+  font-size: 1.3rem;
+  color: #0066cc;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.bio-section, .education-section, .expertise {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.education-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.education-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+}
+
+.education-list li:last-child {
+  border-bottom: none;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: #e6f0ff;
+  color: #0066cc;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}

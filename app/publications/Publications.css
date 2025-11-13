@@ -1,0 +1,28 @@
+.pub-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.pub-item:hover {
+  transform: translateY(-5px);
+}
+
+.pub-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.meta {
+  color: #555;
+  font-size: 1rem;
+}
+
+.full-list {
+  text-align: center;
+  margin-top: 3rem;
+}
