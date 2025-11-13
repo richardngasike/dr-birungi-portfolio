@@ -1,7 +1,9 @@
 'use client';
+
 import { useState } from 'react';
 import Link from 'next/link';
-import './Navbar.css';
+import Image from 'next/image';
+import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,16 +14,24 @@ export default function Navbar() {
   return (
     <>
       {/* Sticky Top Navbar */}
-      <nav className="navbar">
-        <div className="nav-container">
-          <Link href="/" className="nav-logo" onClick={closeMenu}>
-            Dr. Birungi
+      <nav className={styles.navbar}>
+        <div className={styles.navContainer}>
+          {/* Desktop Logo – Signature */}
+          <Link href="/" className={styles.navLogo} onClick={closeMenu}>
+            <Image
+              src="/images/signature.png"
+              alt="Dr. Birungi Signature"
+              width={200}
+              height={100}
+              priority
+              className={styles.logoImage}
+            />
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="nav-menu">
+          <ul className={styles.navMenu}>
             <li>
-              <a href="tel:+256772342377" className="nav-phone">
+              <a href="tel:+256772342377" className={styles.navPhone}>
                 Call
               </a>
             </li>
@@ -32,40 +42,47 @@ export default function Navbar() {
             <li><Link href="/contact">Contact</Link></li>
           </ul>
 
-          {/* Hamburger Button (Turns into X) */}
+          {/* Hamburger */}
           <button
-            className={`hamburger ${isOpen ? 'active' : ''}`}
+            className={`${styles.hamburger} ${isOpen ? styles.active : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
           </button>
         </div>
       </nav>
 
       {/* Mobile Sidebar */}
-      <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-        <div className="mobile-menu-header">
-          <Link href="/" className="mobile-logo" onClick={closeMenu}>
-            Dr. Birungi
+      <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ''}`}>
+        <div className={styles.mobileMenuHeader}>
+          {/* Mobile Logo – Signature */}
+          <Link href="/" className={styles.mobileLogo} onClick={closeMenu}>
+            <Image
+             src="/images/signature.png"
+              alt="Dr. Birungi Signature"
+              width={190}
+              height={54}
+              priority
+              className={styles.logoImage}
+            />
           </Link>
 
-          {/* ONLY ONE CLOSE BUTTON — Clean & Functional */}
           <button
             onClick={closeMenu}
-            className="mobile-close-btn"
+            className={styles.mobileCloseBtn}
             aria-label="Close menu"
           >
             ×
           </button>
         </div>
 
-        <ul className="mobile-nav-links">
+        <ul className={styles.mobileNavLinks}>
           <li>
-            <a href="tel:+256772342377" className="mobile-call-link" onClick={closeMenu}>
+            <a href="tel:+256772342377" className={styles.mobileCallLink} onClick={closeMenu}>
               Call +256 772 342 377
             </a>
           </li>
@@ -76,19 +93,14 @@ export default function Navbar() {
           <li><Link href="/contact" onClick={closeMenu}>Contact</Link></li>
         </ul>
 
-        <div className="mobile-footer-note">
+        <div className={styles.mobileFooterNote}>
           <p>Global Lead, Macroeconomics & Fiscal Policy</p>
           <p>UNAIDS • PhD Health Economics (UCL)</p>
         </div>
       </div>
 
       {/* Backdrop */}
-      {isOpen && (
-        <div
-          className="menu-backdrop active"
-          onClick={closeMenu}
-        />
-      )}
+      {isOpen && <div className={styles.menuBackdrop} onClick={closeMenu} />}
     </>
   );
 }
