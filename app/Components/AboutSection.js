@@ -84,9 +84,9 @@ export default function AboutSection() {
           >
             <div className="photo-frame">
               <Image
-                src="/images/charles2.jpg"
+                src="/images/charles4.jpg"
                 alt="Dr. Charles Birungi"
-                width={500}
+                width={600}
                 height={600}
                 className="about-photo"
                 priority
@@ -94,8 +94,9 @@ export default function AboutSection() {
               <div className="frame-accent"></div>
             </div>
             <div className="photo-caption">
-              Dr. Charles Birungi • UNAIDS Global Lead
-            </div>
+  “No country ever developed on grants and loans alone. Sustainable growth begins the day a nation decides to finance its own priorities with its own resources.”{' '}
+  <span className="author"> - by Dr. Charles Birungi</span>
+</div>
           </motion.div>
         </div>
       </div>
