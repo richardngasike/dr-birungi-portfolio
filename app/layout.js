@@ -1,6 +1,7 @@
 import './globals.css';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import WhatsAppButton from './Components/WhatsAppButton';
 
 export const metadata = {
   title: 'Dr. Charles Birungi | Health Economist & UNAIDS Global Lead',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         <main>{children}</main>
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>
