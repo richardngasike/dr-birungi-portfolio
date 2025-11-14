@@ -32,6 +32,7 @@
   background: #f9fcff;
   border: 1px solid #e6f0ff;
   border-radius: 18px;
+  border-color: #0066cc;
   padding: 1.8rem 2rem;
   transition: all 0.4s ease;
   position: relative;
@@ -41,7 +42,7 @@
 
 .pub-card:hover {
   background: white;
-  border-color: #0066cc;
+  border-color: #ffee00;
   box-shadow: 0 15px 35px rgba(0, 102, 204, 0.12);
 }
 
