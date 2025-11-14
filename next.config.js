@@ -1,9 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+
+  // This replaces the deprecated `images.domains`
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**', // Allows all external images (safe for portfolio)
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000', // Optional – only needed if loading from dev server
+      },
+    ],
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
