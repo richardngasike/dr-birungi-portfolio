@@ -55,7 +55,7 @@ export default function Hero() {
           whileHover={{ scale: 1.05, rotate: 2 }}
         >
           <Image
-            src="/images/charles birungi.jpg"
+            src="/images/charles-birungi.png"
             alt="Dr. Charles Birungi"
             width={400}
             height={400}
