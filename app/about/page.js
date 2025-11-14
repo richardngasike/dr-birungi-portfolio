@@ -153,7 +153,7 @@ export default function AboutPage() {
             In Action
           </motion.h2>
           <div className="gallery-grid">
-            {['charles4.jpg', 'charlesbirungi3.jpeg', 'signature.png'].map((img, i) => (
+            {['charles4.jpg', 'charles5.jpg', 'economics.jpg'].map((img, i) => (
               <motion.div
                 key={i}
                 className="gallery-item"

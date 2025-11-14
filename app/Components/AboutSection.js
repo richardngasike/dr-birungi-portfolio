@@ -94,8 +94,8 @@ export default function AboutSection() {
               <div className="frame-accent"></div>
             </div>
             <div className="photo-caption">
-  “No country ever developed on grants and loans alone. Sustainable growth begins the day a nation decides to finance its own priorities with its own resources.”{' '}
-  <span className="author"> - by Dr. Charles Birungi</span>
+  “A looming debt crisis is threatening global health security. It is time to drop the debt, .”{' '}
+  <span className="author"> - by Dr. Charles Birungi and Jaime Atienza Azcona</span>
 </div>
           </motion.div>
         </div>
