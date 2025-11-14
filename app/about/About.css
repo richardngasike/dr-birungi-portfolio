@@ -1,58 +1,377 @@
-.about-page {
-  padding: 6rem 0;
-  background: white;
+/* Global Section */
+.section { padding: 6rem 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; width: 100%; box-sizing: border-box; }
+
+/* HERO SECTION */
+.about-hero {
+  padding: 8rem 0 6rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
+  overflow: hidden;
 }
 
-.about-content {
-  max-width: 900px;
-  margin: 3rem auto 0;
-  line-height: 1.8;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.lead {
-  font-size: 1.3rem;
+.hero-text h1 {
+  font-size: clamp(2.5rem, 8vw, 3.8rem);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.title {
+  font-size: 1.5rem;
   color: #0066cc;
-  font-weight: 600;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.org {
+  font-size: 1.15rem;
+  color: #555;
   margin-bottom: 2rem;
 }
 
-.bio-section, .education-section, .expertise {
-  margin-bottom: 3rem;
+blockquote {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  font-style: italic;
+  line-height: 1.7;
+  color: #333;
+  border-left: 4px solid #0066cc;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
 }
 
-h2 {
-  font-size: 2rem;
+blockquote .author {
+  display: block;
+  margin-top: 1rem;
+  color: #0066cc;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Portrait */
+.portrait-frame {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+  aspect-ratio: 4/5;
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  background: #f8fbff;
+  transition: transform 0.6s ease;
+}
+
+.portrait-frame:hover .portrait { transform: scale(1.04); }
+
+.frame-accent {
+  position: absolute;
+  inset: 0;
+  border: 10px solid transparent;
+  border-image: linear-gradient(45deg, #0066cc, #0044aa) 1;
+  pointer-events: none;
+  border-radius: 28px;
+}
+
+/* JOURNEY / TIMELINE */
+.journey { background: white; padding: 6rem 0; }
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: flex-start;
+}
+
+.year {
+  background: #0066cc;
+  color: white;
+  padding: 0.8rem 1.4rem;
+  border-radius: 50px;
+  font-weight: bold;
+  min-width: 130px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.timeline-item h3 { margin: 0 0 0.5rem; color: #1a1a1a; font-size: 1.3rem; }
+
+/* EDUCATION */
+.education { background: #f9fcff; padding: 6rem 0; }
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+}
+
+.edu-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,102,204,0.1);
+  text-align: center;
+  transition: all 0.4s ease;
+  border: 1px solid #e6f0ff;
+}
+
+.edu-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,102,204,0.18);
+}
+
+.edu-card h3 {
+  color: #0066cc;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+/* GALLERY */
+.gallery { padding: 6rem 0; background: white; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+.gallery-item {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  aspect-ratio: 4/5;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.1);
+}
+
+/* FAQ */
+.faq { background: #f8fbff; padding: 6rem 0; }
+
+.faq-item {
+  background: white;
+  margin-bottom: 1.2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,102,204,0.08);
+  border: 1px solid #e6f0ff;
+}
+
+.faq-item summary {
+  padding: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f0f7ff;
+  font-size: 1.1rem;
+  list-style: none;
+  position: relative;
+}
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: #0066cc;
+}
+
+.faq-item[open] summary::after { content: '−'; }
+
+.faq-item p {
+  padding: 1.5rem;
+  margin: 0;
+  background: white;
+  line-height: 1.7;
+}
+
+/* CTA */
+.cta {
+  background: #0066cc;
+  color: white;
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.cta-box {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-box h2 {
+  font-size: clamp(2.2rem, 6vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Download Button */
+.btn-download {
+  background: #cc0000;
+  color: white;
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-download:hover {
+  background: #0044aa;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,102,204,0.3);
+}
+
+/* Password Modal */
+.password-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.password-modal {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+}
+
+.password-modal h3 {
+  font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #1a1a1a;
 }
 
-.education-list {
-  list-style: none;
-  padding-left: 0;
+.modal-note {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
 }
 
-.education-list li {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #eee;
-  font-size: 1.1rem;
+.password-modal input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+  letter-spacing: 8px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 1rem;
 }
 
-.education-list li:last-child {
-  border-bottom: none;
+.password-modal input:focus {
+  outline: none;
+  border-color: #0066cc;
 }
 
-.tags {
+.error {
+  color: #d32f2f;
+  font-weight: 600;
+  margin: 0.5rem 0 1rem;
+}
+
+.modal-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 1rem;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
-.tag {
-  background: #e6f0ff;
-  color: #0066cc;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 500;
+/* Responsive Modal */
+@media (max-width: 480px) {
+  .password-modal {
+    padding: 2rem;
+    border-radius: 20px;
+  }
+  .password-modal h3 { font-size: 1.6rem; }
+  .modal-buttons { flex-direction: column; }
+}
+
+/* RESPONSIVE FIXES — Perfect on Small Devices */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero-text { order: 2; }
+  .hero-image { order: 1; }
+
+  .portrait-frame { max-width: 380px; }
+}
+
+@media (max-width: 768px) {
+  .about-hero { padding: 6rem 0 4rem; }
+
+  .timeline-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .year { margin: 0 auto 1rem; }
+
+  .section { padding: 5rem 0; }
+
+  .gallery-grid,
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .gallery-item { aspect-ratio: 1/1; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 1rem; }
+
+  .portrait-frame { max-width: 300px; }
+  .portrait { padding: 1.2rem; }
+
+  .edu-card { padding: 1.8rem; }
+
+  .faq-item summary { padding: 1.2rem; font-size: 1rem; }
+  .faq-item p { padding: 1.2rem; font-size: 0.98rem; }
+
+  .cta-box h2 { font-size: 2.2rem; }
 }
